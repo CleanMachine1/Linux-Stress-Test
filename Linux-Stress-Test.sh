@@ -57,11 +57,13 @@ sleep 1
 stress --cpu $cpucores --timeout 90 >>./results.txt
 currenttemp=$(cat /sys/class/thermal/thermal_zone0/temp)
 echo "The CPU is currently at $currenttemp after running the test"
-echo "The CPU is currently at $currenttemp after running the test" >>./results
+echo "The CPU is currently at $currenttemp after running the test" >>./results.txt
 echo "The results have been writen to your current working directory"
 echo "END OF CPU STRESS"
 echo "Starting GPU Stress"
-sleep 1
+echo "This takes 20 seconds!"
+sleep 5
+
 timeout 20s glxgears -fullscreen >>./results.txt
 echo "The results have been writen to your current working directory"
 sleep 5
