@@ -30,4 +30,8 @@ cd ~/Linux-Stress-Test
 ```
 ## Removal 
 
+```bash
+sudo apt purge stress cowsay mesa-utils
+```
+
 ** To be added **
