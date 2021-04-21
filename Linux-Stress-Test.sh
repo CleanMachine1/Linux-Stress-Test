@@ -39,4 +39,8 @@ echo "The CPU is currently at $currenttemp after running the test" >>./results
 echo "The results have been writen to your current working directory"
 sleep 5 
 exit
-fi
+
+elif [ $question1 = "3" ]; then
+cowsay -f tux "Made by CleanMachine1"
+echo "Starting GPU Stress"
+sleep 1
