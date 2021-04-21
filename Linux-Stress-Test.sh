@@ -35,8 +35,8 @@ echo "Starting CPU Stress"
 sleep 1
 stress --cpu $cpucores --timeout 90 >>./results.txt
 currenttemp=$(cat /sys/class/thermal/thermal_zone0/temp)
-echo "The CPU is currently at $currenttemp after running the test"
-echo "The CPU is currently at $currenttemp after running the test" >>./results
+echo "The CPU is currently at $currenttemp after running the test (Divide by 1000 to get C temp)"
+echo "The CPU is currently at $currenttemp after running the test (Divide by 1000 to get C temp)" >>./results
 echo "The results have been writen to your current working directory"
 sleep 5 
 exit
@@ -55,9 +55,9 @@ else
 echo "Starting CPU Stress"
 sleep 1
 stress --cpu $cpucores --timeout 90 >>./results.txt
-currenttemp=$(cat /sys/class/thermal/thermal_zone0/temp)
-echo "The CPU is currently at $currenttemp after running the test"
-echo "The CPU is currently at $currenttemp after running the test" >>./results.txt
+currenttemp=$(cat /sys/class/thermal/thermal_zone0/temp / 1000)
+echo "The CPU is currently at $currenttemp after running the test (Divide by 1000 to get C temp)"
+echo "The CPU is currently at $currenttemp after running the test (Divide by 1000 to get C temp)" >>./results.txt
 echo "The results have been writen to your current working directory"
 echo "END OF CPU STRESS"
 echo "Starting GPU Stress"
